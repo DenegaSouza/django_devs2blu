@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "aplicacao"
+		},
+		{
+			"path": "../Meus Reps/python/modulo003-python-web"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "site"
+	}
+}
