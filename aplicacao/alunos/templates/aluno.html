@@ -8,6 +8,7 @@
         <div class="receipe-post-search mb-80">
             <div class="container">
                 <form action="#" method="post">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="col-12 col-lg-5">
                             <select name="select1" id="select1">
