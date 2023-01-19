@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views #importacao da pasta raiz 'alunos'
-
+from . import views
+ 
 urlpatterns = [
     path ('', views.index, name='index'),
-    path ('aluno/', views.aluno, name='aluno'),
+    path ('<int:aluno_id>', views.aluno, name='aluno')
 ]

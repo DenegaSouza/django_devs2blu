@@ -1,22 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from .models import Alunos
 
 # Create your views here.
 
 def index(request):
-    alunos = {
-        1: 'Aluno 1',
-        2: 'Aluno 2',
-        3: 'Aluno 3',
-        4: 'Aluno 4',
-        5: 'Aluno 5',
-        6: 'Aluno 6',
-    }
+    alunos = Alunos.objects.all
     dados = {
-        'nome_do_aluno' : alunos
+        'alunos' : alunos
     }
 
     return render(request,'index.html', dados)
 
-def aluno(request):
-    return render(request,'aluno.html')
+def aluno(request, aluno_id):
+    alunos = get_object_or_404(Alunos, pk=aluno_id)
+    aluno_a_exibir = {
+        'aluno': alunos
+    }
+    return render(request,'aluno.html', aluno_a_exibir)
